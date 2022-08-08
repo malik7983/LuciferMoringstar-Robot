@@ -25,7 +25,7 @@
 # License Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LICENSE
 
 import random, asyncio
-from pyrogram import Client as lucifermoringstar_robot , filters, enums
+from pyrogram import Client as lucifermoringstar_robot , filters, enumss
 from LuciferMoringstar_Robot import temp, SUPPORT, PICS, ADMINS, CREATOR_USERNAME, CREATOR_NAME, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, SAVE_FILES, START_MESSAGE
 from LuciferMoringstar_Robot.translation import SETTINGS_MESSAGE, ADMIN_CMD_MESSAGE, ABOUT_MESSAGE, USAGE_MESSAGE
 from LuciferMoringstar_Robot.functions import get_settings, save_group_settings
@@ -49,7 +49,7 @@ async def start(bot: lucifermoringstar_robot, update):
             invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
             try:
                 user = await bot.get_chat_member(int(AUTH_CHANNEL), update.from_user.id)
-                if user.status == enums.ChatMemberStatus.RESTRICTED:
+                if user.status == enumss.ChatMemberStatus.RESTRICTED:
                     await bot.send_message(chat_id=update.from_user.id, text="""𝚂𝙾𝚁𝚁𝚈 𝚂𝙸𝚁, 𝚈𝙾𝚄 𝙰𝚁𝙴 𝙱𝙰𝙽𝙽𝙴𝙳 𝚃𝙾 𝚄𝚂𝙴 𝙼𝙴""", disable_web_page_preview=True)                  
                     return
             except UserNotParticipant:
